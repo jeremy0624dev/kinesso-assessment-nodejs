@@ -37,11 +37,11 @@ Calculate the monthly tax and income of an employee for the month through his an
 <tr>
     <th>Body(Json)</th>
     <td>
-        firstName: string<br>
-        lastName: string<br>
-        annualSalary: number<br>
-        superRate: number (range: 0 - 12)<br>
-        paymentStartDate: string (format: MM-DD-YYYY)<br>
+        <code>firstName: string</code><br>
+        <code>lastName: string</code><br>
+        <code>annualSalary: number</code><br>
+        <code>superRate: number</code> (range: 0 - 12)<br>
+        <code>paymentStartDate: string</code> (format: MM-DD-YYYY)<br>
     </td>
     <td>
         <code>
@@ -53,19 +53,29 @@ Calculate the monthly tax and income of an employee for the month through his an
                 "paymentStartDate": "01 March"
             }
         </code>
+        <hr>
+        <code>
+            {
+                "firstName": "Claire",
+                "lastName": "Wong",
+                "annualSalary": 120000,
+                "superRate": 10,
+                "paymentStartDate": "01 March"
+            }
+        </code>
     </td>
 </tr>
 <tr>
     <th>Response(Json)</th>
     <td>
-        name: string; Full name of the employee<br>
-        payPeriod: string; First day of the start payment date to end of the month <br>
-        grossIncome: number; Annual salary divided by 12 months<br>
-        incomeTax: number; Income tax charged from the annual salary and divided by 12 months<br>
-        netIncome: number; Gross income minuses with Income tax per month<br>
-        superannuation: number; Gross income times with super rate<br>
-        totalBusinessDay: number; Total business day of the month<br>
-        attendedBusinessDay: number; Total business day of the month that the employee has attended<br>
+        <code>name: string;</code> Full name of the employee<br>
+        <code>payPeriod: string;</code> First day of the start payment date to end of the month <br>
+        <code>grossIncome: number;</code> Annual salary divided by 12 months<br>
+        <code>incomeTax: number;</code> Income tax charged from the annual salary and divided by 12 months<br>
+        <code>netIncome: number;</code> Gross income minuses with Income tax per month<br>
+        <code>superannuation: number;</code> Gross income times with super rate<br>
+        <code>totalBusinessDay: number;</code> Total business day of the month<br>
+        <code>attendedBusinessDay: number;</code> Total business day of the month that the employee has attended<br>
     </td>
     <td>
         <code>
@@ -77,6 +87,21 @@ Calculate the monthly tax and income of an employee for the month through his an
                     "incomeTax": 922,
                     "netIncome": 4082,
                     "superannuation": 450,
+                    "totalBusinessDay": 23,
+                    "attendedBusinessDay": 23
+                }
+            }
+        </code>
+        <hr>
+        <code>
+            {
+                "payslip": {
+                    "name": "Claire Wong",
+                    "payPeriod": "01 March - 31 March",
+                    "grossIncome": 10000,
+                    "incomeTax": 2669,
+                    "netIncome": 7331,
+                    "superannuation": 1000,
                     "totalBusinessDay": 23,
                     "attendedBusinessDay": 23
                 }

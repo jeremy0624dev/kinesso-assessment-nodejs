@@ -8,6 +8,7 @@ const displayDateFormat = 'DD MMMM';
  * @param {number} annualSalary
  * @param {number} superRate
  * @param {string} paymentStartDate
+ * @return {PaySlip}
  */
 export async function generatePayslip(firstName, lastName, annualSalary, superRate = 0, paymentStartDate) {
     let mntPaymentStart;
@@ -99,7 +100,7 @@ function calculateAnnualIncomeTax(annualSalary) {
             chargePer1Dollar: 0.45,
         }
     ];
-    // use binary search concept to start in the middle
+    // use binary search concept to start searching in the middle of array
     const midIndex = Math.round((taxRates.length / 2) - 1);
     let currentIndex = midIndex;
     let taxRateSet = taxRates[midIndex];
